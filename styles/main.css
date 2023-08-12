@@ -88,7 +88,7 @@ main#main div#input-container button#add-task-button {
 }
 
 main#main div#input-container button#add-task-button:hover {
-	background-color: #ff0000;
+	background-color: #3a86ff;
 	cursor: pointer;
 }
 
@@ -138,14 +138,39 @@ main#main div#task-container li.task-item:active {
 }
 
 main#main div#task-container ul#completed-task-list li.completed {
-    text-decoration: line-through;
+	text-decoration: line-through;
+}
+
+main#main div#task-container button#delete-completed-tasks-button {
+	width: 10rem;
+	height: 3rem;
+	font-size: 1rem;
+	margin: 0 0.5rem;
+	padding: 0.5rem;
+	border: none;
+	background-color: #001d3d;
+	color: white;
+}
+
+main#main div#task-container button#delete-completed-tasks-button:hover {
+	background-color: #ffd60a;
+	color: black;
+	cursor: pointer;
+}
+
+main#main div#task-container button#delete-completed-tasks-button:focus {
+	outline: none;
+}
+
+main#main div#task-container button#delete-completed-tasks-button:active {
+	transform: scale(0.95);
 }
 
 main#main div#task-container button#delete-all-tasks-button {
 	width: 10rem;
 	height: 3rem;
-	font-size: 1.2rem;
-	margin: 0.5rem;
+	font-size: 1.1rem;
+	margin: 0 0.5rem;
 	padding: 0.5rem;
 	border: none;
 	background-color: #001d3d;

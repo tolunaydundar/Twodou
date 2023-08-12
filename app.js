@@ -4,6 +4,9 @@ const taskList = document.querySelector("#task-list");
 const tasks = document.querySelectorAll(".task-item");
 const completedTaskList = document.querySelector("#completed-task-list");
 const completedTasks = document.querySelectorAll(".completed");
+const deleteCompletedTasksButton = document.querySelector(
+	"#delete-completed-tasks-button"
+);
 const deleteAllTasksButton = document.querySelector("#delete-all-tasks-button");
 
 addTaskButton.addEventListener("click", function (event) {
@@ -46,6 +49,13 @@ completedTaskList.addEventListener("contextmenu", function (event) {
 	event.preventDefault();
 	if (event.target.tagName === "LI") {
 		event.target.remove();
+	}
+});
+
+deleteCompletedTasksButton.addEventListener("click", function (event) {
+	const completedTaskToDelete = document.querySelectorAll(".completed");
+	for (let i = 0; i < completedTaskToDelete.length; i++) {
+		completedTaskToDelete[i].remove();
 	}
 });
 
