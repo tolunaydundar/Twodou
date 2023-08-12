@@ -6,7 +6,7 @@ I haven't implemented the feature to save data to local storage yet. Also, there
 
 ## Live Preview
 
-Click [here](https://tolunaydundar.github.io/Twodou/) to see the project on [GitHub Pages](https://pages.github.com/).
+Click [here](https://tolunaydundar.github.io/yet-another-to-do-list-app/) to see the project on [GitHub Pages](https://pages.github.com/).
 
 ## License
 
