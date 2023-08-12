@@ -1,0 +1,167 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+header#header {
+	font-family: "Bebas Neue", sans-serif;
+}
+
+header#header nav#navbar {
+	width: 100vw;
+	height: 10vh;
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: white;
+	color: black;
+}
+
+header#header nav#navbar h1#brand {
+	font-size: 1.5rem;
+	margin-left: 1rem;
+	padding-right: 1rem;
+	border-right: 1px solid black;
+}
+
+header#header nav#navbar ul#nav-links {
+	margin-right: 1rem;
+	font-size: 1.5rem;
+	list-style: none;
+	display: flex;
+	gap: 1rem;
+}
+
+header#header nav#navbar ul#nav-links li.nav-link a {
+	text-decoration: none;
+	color: black;
+}
+
+header#header nav#navbar ul#nav-links li.nav-link a:hover {
+	color: #ff0000;
+}
+
+body {
+	font-family: "Lato", sans-serif;
+}
+
+main#main {
+	margin-top: 10vh;
+	width: 100vw;
+	min-height: 90vh;
+}
+
+main#main div#input-container {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+}
+
+main#main div#input-container input#task-input-form {
+	min-width: 400px;
+	width: 50vw;
+	height: 5vh;
+	font-size: 1.5rem;
+	margin: 1rem;
+	padding: 0.5rem;
+	border: none;
+	border-bottom: 1px solid black;
+}
+
+main#main div#input-container input#task-input-form:focus {
+	outline: none;
+}
+
+main#main div#input-container button#add-task-button {
+	width: 10rem;
+	height: 3rem;
+	font-size: 1.5rem;
+	margin: 1rem;
+	padding: 0.5rem;
+	border: none;
+	background-color: black;
+	color: white;
+}
+
+main#main div#input-container button#add-task-button:hover {
+	background-color: #ff0000;
+	cursor: pointer;
+}
+
+main#main div#input-container button#add-task-button:focus {
+	outline: none;
+}
+
+main#main div#input-container button#add-task-button:active {
+	transform: scale(0.95);
+}
+
+main#main div#task-container {
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 1rem;
+}
+
+main#main div#task-container h2.heading {
+	font-size: 2rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid black;
+}
+main#main div#task-container #task-list {
+	list-style: none;
+}
+
+main#main div#task-container li.task-item {
+	margin: 0.5rem;
+	padding: 0.5rem;
+	width: 50vw;
+	min-width: 400px;
+	height: 5vh;
+	background-color: black;
+	color: white;
+	display: flex;
+	align-items: center;
+}
+
+main#main div#task-container li.task-item:hover {
+	background-color: #001d3d;
+	cursor: pointer;
+}
+
+main#main div#task-container li.task-item:active {
+	transform: scale(0.95);
+}
+
+main#main div#task-container ul#completed-task-list li.completed {
+    text-decoration: line-through;
+}
+
+main#main div#task-container button#delete-all-tasks-button {
+	width: 10rem;
+	height: 3rem;
+	font-size: 1.2rem;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	border: none;
+	background-color: #001d3d;
+	color: white;
+    display: none;
+}
+
+main#main div#task-container button#delete-all-tasks-button:hover {
+	background-color: #ff0000;
+	cursor: pointer;
+}
+
+main#main div#task-container button#delete-all-tasks-button:focus {
+	outline: none;
+}
+
+main#main div#task-container button#delete-all-tasks-button:active {
+	transform: scale(0.95);
+}

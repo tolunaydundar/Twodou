@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Twodou</title>
+
+		<link rel="stylesheet" href="./styles/reset.css" />
+		<link rel="stylesheet" href="./styles/main.css" />
+		<link
+			rel="stylesheet"
+			href="./styles/mobile.css"
+			media="screen and (max-width: 768px)"
+		/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header id="header">
+			<nav id="navbar">
+				<h1 id="brand">Twodou</h1>
+
+				<!-- <ul id="nav-links">
+					<li class="nav-link"><a href="#">Home</a></li>
+					<li class="nav-link"><a href="#">Today</a></li>
+					<li class="nav-link"><a href="#">Upcoming</a></li>
+					<li class="nav-link"><a href="#">Completed</a></li>
+				</ul> -->
+			</nav>
+		</header>
+
+		<main id="main">
+			<div id="input-container">
+				<input type="text" id="task-input-form" placeholder="lorem ipsum" />
+				<button id="add-task-button">Add</button>
+			</div>
+
+			<div id="task-container">
+                <h2 class="heading">Current Tasks</h2>
+                <ul id="task-list">
+                    <li class="task-item">Task</li>
+                    <li class="task-item">Task</li>
+                    <li class="task-item">Task</li>
+                </ul>
+
+                <h2 class="heading">Completed Tasks</h2>
+                <ul id="completed-task-list">
+                    <li class="task-item completed">Task</li>
+                    <li class="task-item completed">Task</li>
+                    <li class="task-item completed">Task</li>
+                </ul>
+
+                <button id="delete-all-tasks-button">Delete All Tasks</button>
+            </div>
+		</main>
+		<script src="./app.js"></script>
+	</body>
+</html>
