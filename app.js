@@ -1,52 +1,50 @@
 const newTaskInput = document.querySelector("#task-input-form");
 const addTaskButton = document.querySelector("#add-task-button");
 const taskList = document.querySelector("#task-list");
+const tasks = document.querySelectorAll(".task-item");
 const completedTaskList = document.querySelector("#completed-task-list");
+const completedTasks = document.querySelectorAll(".completed");
 const deleteAllTasksButton = document.querySelector("#delete-all-tasks-button");
 
-addTaskButton.addEventListener("click", addTask);
-
-function addTask(event) {
-	event.preventDefault();
-
+addTaskButton.addEventListener("click", function (event) {
 	if (newTaskInput.value === "") {
-		alert("Please enter a task.");
+		alert("Please enter a task");
 		return;
 	}
 
 	const newTask = document.createElement("li");
-	newTask.innerText = newTaskInput.value;
 	newTask.classList.add("task-item");
+	newTask.innerText = newTaskInput.value;
 	taskList.appendChild(newTask);
 	newTaskInput.value = "";
-}
+});
 
-taskList.addEventListener("click", completeTask);
+taskList.addEventListener("click", function (event) {
+	if (event.target.tagName === "LI") {
+		event.target.classList.toggle("completed");
+		completedTaskList.appendChild(event.target);
+		taskList.removeChild(event.target);
+	}
+});
 
-function completeTask(event) {
-	event.target.classList.toggle("completed");
-	completedTaskList.appendChild(event.target);
-	taskList.removeChild(event.target);
-}
-
-taskList.addEventListener("contextmenu", deleteTask);
-
-function deleteTask(event) {
+taskList.addEventListener("contextmenu", function (event) {
 	event.preventDefault();
-	taskList.removeChild(event.target);
-}
+	if (event.target.tagName === "LI") {
+		event.target.remove();
+	}
+});
 
-completedTaskList.addEventListener("click", uncompleteTask);
+completedTaskList.addEventListener("click", function (event) {
+	if (event.target.tagName === "LI") {
+		event.target.classList.toggle("completed");
+		taskList.appendChild(event.target);
+		completedTaskList.removeChild(event.target);
+	}
+});
 
-function uncompleteTask(event) {
-	event.target.classList.toggle("completed");
-	taskList.appendChild(event.target);
-	completedTaskList.removeChild(event.target);
-}
-
-completedTaskList.addEventListener("contextmenu", deleteCompletedTask);
-
-function deleteCompletedTask(event) {
+completedTaskList.addEventListener("contextmenu", function (event) {
 	event.preventDefault();
-	completedTaskList.removeChild(event.target);
-}
+	if (event.target.tagName === "LI") {
+		event.target.remove();
+	}
+});
