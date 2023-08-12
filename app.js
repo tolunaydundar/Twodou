@@ -8,10 +8,15 @@ const deleteCompletedTasksButton = document.querySelector(
 	"#delete-completed-tasks-button"
 );
 const deleteAllTasksButton = document.querySelector("#delete-all-tasks-button");
+const errorMessage = document.querySelector("#error-message-container");
 
 addTaskButton.addEventListener("click", function (event) {
 	if (newTaskInput.value === "") {
-		alert("Please enter a task");
+		errorMessage.setAttribute("style", "display: flex");
+
+		setTimeout(function () {
+			errorMessage.setAttribute("style", "display: none");
+		}, 3000);
 		return;
 	}
 

@@ -100,6 +100,20 @@ main#main div#input-container button#add-task-button:active {
 	transform: scale(0.95);
 }
 
+main#main div#input-container div#error-message-container {
+	width: 50vw;
+	height: 5vh;
+	margin: 1rem;
+	padding: 0.5rem;
+	background-color: red;
+	color: white;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	display: none;
+}
+
 main#main div#task-container {
 	margin: 1rem;
 	display: flex;
