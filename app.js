@@ -48,3 +48,10 @@ completedTaskList.addEventListener("contextmenu", function (event) {
 		event.target.remove();
 	}
 });
+
+deleteAllTasksButton.addEventListener("click", function (event) {
+	const taskToDelete = document.querySelectorAll(".task-item");
+	for (let i = 0; i < taskToDelete.length; i++) {
+		taskToDelete[i].remove();
+	}
+});

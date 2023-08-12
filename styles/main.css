@@ -150,7 +150,6 @@ main#main div#task-container button#delete-all-tasks-button {
 	border: none;
 	background-color: #001d3d;
 	color: white;
-    display: none;
 }
 
 main#main div#task-container button#delete-all-tasks-button:hover {
