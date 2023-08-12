@@ -30,8 +30,7 @@ main#main div#task-container #task-list {
 main#main div#task-container li.task-item {
     margin: 0.5rem;
     padding: 0.5rem;
-    width: 50vw;
-    min-width: 400px;
+    width: 80vw;
     height: 5vh;
     background-color: black;
     color: white;

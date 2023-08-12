@@ -61,7 +61,7 @@ main#main div#input-container {
 }
 
 main#main div#input-container input#task-input-form {
-	min-width: 400px;
+	min-width: 300px;
 	width: 50vw;
 	height: 5vh;
 	font-size: 1.5rem;
@@ -69,6 +69,7 @@ main#main div#input-container input#task-input-form {
 	padding: 0.5rem;
 	border: none;
 	border-bottom: 1px solid black;
+	text-align: center;
 }
 
 main#main div#input-container input#task-input-form:focus {
@@ -120,7 +121,6 @@ main#main div#task-container li.task-item {
 	margin: 0.5rem;
 	padding: 0.5rem;
 	width: 50vw;
-	min-width: 400px;
 	height: 5vh;
 	background-color: black;
 	color: white;
