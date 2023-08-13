@@ -16,15 +16,15 @@ header#header nav#navbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: white;
-	color: black;
+	background-color: black;
+	color: white;
 }
 
 header#header nav#navbar h1#brand {
 	font-size: 1.5rem;
 	margin-left: 1rem;
 	padding-right: 1rem;
-	border-right: 1px solid black;
+	border-right: 1px solid white;
 }
 
 header#header nav#navbar ul#nav-links {
@@ -70,6 +70,7 @@ main#main div#input-container input#task-input-form {
 	border: none;
 	border-bottom: 1px solid black;
 	text-align: end;
+	color: black;
 }
 
 main#main div#input-container input#task-input-form:focus {
