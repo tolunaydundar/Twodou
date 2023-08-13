@@ -1,8 +1,12 @@
-# Twodou
+# Yet Another To Do List App (YATDLA)
 
-Built with pure HTML, CSS and JavaScript.
+Built with HTML, CSS and JavaScript.
 
-I haven't implemented the feature to save data to local storage yet. Also, there are some bugs that I'm currently working on to solve.
+## Features & How to Use
+
+- Left click on a task to mark it as complete or incomplete
+- Right click on a task to permanently delete it
+- The app automatically saves current state to your browser's local storage
 
 ## Live Preview
 
