@@ -11,6 +11,9 @@ const deleteCompletedTasksButton = document.querySelector(
 	"#delete-completed-tasks-button"
 );
 const deleteAllTasksButton = document.querySelector("#delete-all-tasks-button");
+const changeThemeButton = document.querySelector("#change-theme-button");
+const mainStyling = document.querySelector("#main-styling");
+const mobileStyling = document.querySelector("#mobile-styling");
 
 //Event Listeners
 //Loads tasks from local storage
@@ -208,4 +211,23 @@ deleteAllTasksButton.addEventListener("click", function (event) {
 	}
 
 	localStorage.clear();
+});
+
+//Changes the theme of the app
+changeThemeButton.addEventListener("click", function (event) {
+	if (mainStyling.getAttribute("href") === "./styles/main.css") {
+		mainStyling.setAttribute("href", "./styles/main-dark.css");
+
+		if (mobileStyling.getAttribute("href") === "./styles/mobile.css") {
+			mobileStyling.setAttribute("href", "./styles/mobile-dark.css");
+		}
+	}
+
+	else if (mainStyling.getAttribute("href") === "./styles/main-dark.css") {
+		mainStyling.setAttribute("href", "./styles/main.css");
+
+		if (mobileStyling.getAttribute("href") === "./styles/mobile-dark.css") {
+			mobileStyling.setAttribute("href", "./styles/mobile.css");
+		}
+	}
 });
