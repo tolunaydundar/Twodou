@@ -1,6 +1,9 @@
 //Input fields, buttons and lists
 const taskInput = document.querySelector("#task-input-form");
 const addTaskButton = document.querySelector("#add-task-button");
+const errorMessageContainer = document.querySelector(
+	"#error-message-container"
+);
 const taskListContainer = document.querySelector("#task-list-container");
 const taskList = document.querySelector("#task-list");
 const completedTaskList = document.querySelector("#completed-task-list");
@@ -49,7 +52,11 @@ addTaskButton.addEventListener("click", function (event) {
 	event.preventDefault();
 
 	if (taskInput.value === "") {
-		alert("Please enter a task");
+		errorMessageContainer.setAttribute("style", "display: flex");
+
+		setTimeout(function () {
+			errorMessageContainer.setAttribute("style", "display: none");
+		}, 3000);
 	} else {
 		const newTask = document.createElement("li");
 		newTask.classList.add("task-item");
