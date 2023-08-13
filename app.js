@@ -10,6 +10,23 @@ const deleteCompletedTasksButton = document.querySelector(
 const deleteAllTasksButton = document.querySelector("#delete-all-tasks-button");
 const errorMessage = document.querySelector("#error-message-container");
 
+document.addEventListener("DOMContentLoaded", function (event) {
+	let storedToDos;
+
+	if (localStorage.getItem("tasks") === null) {
+		storedToDos = [];
+	} else {
+		storedToDos = JSON.parse(localStorage.getItem("tasks"));
+	}
+
+	storedToDos.forEach(function (task) {
+		let newTask = document.createElement("li");
+		newTask.classList.add("task-item");
+		newTask.innerText = task;
+		taskList.appendChild(newTask);
+	});
+});
+
 addTaskButton.addEventListener("click", function (event) {
 	if (newTaskInput.value === "") {
 		errorMessage.setAttribute("style", "display: flex");
@@ -20,7 +37,18 @@ addTaskButton.addEventListener("click", function (event) {
 		return;
 	}
 
-	const newTask = document.createElement("li");
+	let storedToDos;
+
+	if (localStorage.getItem("tasks") === null) {
+		storedToDos = [];
+	} else {
+		storedToDos = JSON.parse(localStorage.getItem("tasks"));
+	}
+
+	storedToDos.push(newTaskInput.value);
+	localStorage.setItem("tasks", JSON.stringify(storedToDos));
+
+	let newTask = document.createElement("li");
 	newTask.classList.add("task-item");
 	newTask.innerText = newTaskInput.value;
 	taskList.appendChild(newTask);
@@ -69,4 +97,6 @@ deleteAllTasksButton.addEventListener("click", function (event) {
 	for (let i = 0; i < taskToDelete.length; i++) {
 		taskToDelete[i].remove();
 	}
+
+	localStorage.clear();
 });
