@@ -16,8 +16,9 @@ header#header nav#navbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: black;
+	border-bottom: 1px solid black
 }
 
 header#header nav#navbar h1#brand {
