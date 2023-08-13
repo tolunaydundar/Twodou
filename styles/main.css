@@ -69,7 +69,7 @@ main#main div#input-container input#task-input-form {
 	padding: 0.5rem;
 	border: none;
 	border-bottom: 1px solid black;
-	text-align: center;
+	text-align: end;
 }
 
 main#main div#input-container input#task-input-form:focus {

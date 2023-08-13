@@ -1,39 +1,43 @@
 header#header nav#navbar {
-    justify-content: center;
+	justify-content: center;
 }
 
 header#header nav#navbar h1#brand {
-    border: none;
-    margin: 0;
-    padding: 0;
+	border: none;
+	margin: 0;
+	padding: 0;
 }
 
 main#main div#input-container {
-    display: flex;
-    flex-direction: center;
-    align-items: center;
+	display: flex;
+	flex-direction: center;
+	align-items: center;
+}
+
+main#main div#input-container input#task-input-form {
+	text-align: center;
 }
 
 main#main div#task-container {
-    align-items: center;
+	align-items: center;
 }
 
 main#main div#task-container h2.heading {
-    font-size: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid black
+	font-size: 2rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid black;
 }
 main#main div#task-container #task-list {
-    list-style: none;
+	list-style: none;
 }
 
 main#main div#task-container li.task-item {
-    margin: 0.5rem;
-    padding: 0.5rem;
-    width: 80vw;
-    height: 5vh;
-    background-color: black;
-    color: white;
-    display: flex;
-    align-items: center;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	width: 80vw;
+	height: 5vh;
+	background-color: black;
+	color: white;
+	display: flex;
+	align-items: center;
 }
