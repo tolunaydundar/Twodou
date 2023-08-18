@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	transition: 0.5s;
 }
 
 header#header {
@@ -17,14 +18,14 @@ header#header nav#navbar {
 	justify-content: space-between;
 	align-items: center;
 	background-color: #080202;
-	color: #FCE9F1;
+	color: #fce9f1;
 }
 
 header#header nav#navbar h1#brand {
 	font-size: 1.5rem;
 	margin-left: 1rem;
 	padding-right: 1rem;
-	border-right: 1px solid #FCE9F1;
+	border-right: 1px solid #fce9f1;
 }
 
 header#header nav#navbar h2#change-theme-button {
@@ -48,7 +49,7 @@ header#header nav#navbar ul#nav-links {
 
 header#header nav#navbar ul#nav-links li.nav-link a {
 	text-decoration: none;
-	color: #FCE9F1;
+	color: #fce9f1;
 }
 
 header#header nav#navbar ul#nav-links li.nav-link a:hover {
@@ -80,7 +81,7 @@ main#main div#input-container input#task-input-form {
 	margin: 1rem;
 	padding: 0.5rem;
 	border: none;
-	border-bottom: 1px solid #DAFFFB;
+	border-bottom: 1px solid #dafffb;
 	outline: none;
 	background: none;
 	text-align: end;
@@ -98,7 +99,7 @@ main#main div#input-container button#add-task-button {
 	margin: 1rem;
 	padding: 0.5rem;
 	border: none;
-	background-color: #FCE9F1;
+	background-color: #fce9f1;
 	color: #080202;
 }
 
@@ -140,8 +141,8 @@ main#main div#task-container {
 main#main div#task-container h2.heading {
 	font-size: 2rem;
 	padding-bottom: 1rem;
-	border-bottom: 1px solid #FCE9F1;
-	color: #FCE9F1;
+	border-bottom: 1px solid #fce9f1;
+	color: #fce9f1;
 }
 main#main div#task-container #task-list {
 	list-style: none;
@@ -152,7 +153,7 @@ main#main div#task-container li.task-item {
 	padding: 0.5rem;
 	width: 50vw;
 	min-height: 5vh;
-	background-color: #FCE9F1;
+	background-color: #fce9f1;
 	color: #080202;
 	display: flex;
 	align-items: center;
@@ -162,7 +163,7 @@ main#main div#task-container li.task-item {
 
 main#main div#task-container li.task-item:hover {
 	background-color: #001d3d;
-	color: #FCE9F1;
+	color: #fce9f1;
 	cursor: pointer;
 }
 
