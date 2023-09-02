@@ -195,9 +195,15 @@ completedTaskList.addEventListener("contextmenu", function (event) {
 
 //Deletes all completed tasks
 deleteCompletedTasksButton.addEventListener("click", function (event) {
-	const completedTaskToDelete = document.querySelectorAll(".completed");
-	for (let i = 0; i < completedTaskToDelete.length; i++) {
-		completedTaskToDelete[i].remove();
+	const confirmation = confirm(
+		"Are you sure you want to delete all completed tasks?"
+	);
+
+	if (confirmation === true) {
+		const completedTaskToDelete = document.querySelectorAll(".completed");
+		for (let i = 0; i < completedTaskToDelete.length; i++) {
+			completedTaskToDelete[i].remove();
+		}
 	}
 
 	localStorage.removeItem("storedCompletedTasks");
@@ -205,9 +211,13 @@ deleteCompletedTasksButton.addEventListener("click", function (event) {
 
 //Deletes all tasks
 deleteAllTasksButton.addEventListener("click", function (event) {
-	const taskToDelete = document.querySelectorAll(".task-item");
-	for (let i = 0; i < taskToDelete.length; i++) {
-		taskToDelete[i].remove();
+	const confirmation = confirm("Are you sure you want to delete all tasks?");
+
+	if (confirmation === true) {
+		const taskToDelete = document.querySelectorAll(".task-item");
+		for (let i = 0; i < taskToDelete.length; i++) {
+			taskToDelete[i].remove();
+		}
 	}
 
 	localStorage.clear();
@@ -215,19 +225,21 @@ deleteAllTasksButton.addEventListener("click", function (event) {
 
 //Changes the theme of the app
 changeThemeButton.addEventListener("click", function (event) {
-	if (mainStyling.getAttribute("href") === "./styles/main.css") {
-		mainStyling.setAttribute("href", "./styles/main-dark.css");
+	if (mainStyling.getAttribute("href") === "./assets/styles/main.css") {
+		mainStyling.setAttribute("href", "./assets/styles/main-dark.css");
 
-		if (mobileStyling.getAttribute("href") === "./styles/mobile.css") {
-			mobileStyling.setAttribute("href", "./styles/mobile-dark.css");
+		if (mobileStyling.getAttribute("href") === "./assets/styles/mobile.css") {
+			mobileStyling.setAttribute("href", "./assets/styles/mobile-dark.css");
 		}
-	}
+	} else if (
+		mainStyling.getAttribute("href") === "./assets/styles/main-dark.css"
+	) {
+		mainStyling.setAttribute("href", "./assets/styles/main.css");
 
-	else if (mainStyling.getAttribute("href") === "./styles/main-dark.css") {
-		mainStyling.setAttribute("href", "./styles/main.css");
-
-		if (mobileStyling.getAttribute("href") === "./styles/mobile-dark.css") {
-			mobileStyling.setAttribute("href", "./styles/mobile.css");
+		if (
+			mobileStyling.getAttribute("href") === "./assets/styles/mobile-dark.css"
+		) {
+			mobileStyling.setAttribute("href", "./assets/styles/mobile.css");
 		}
 	}
 });
