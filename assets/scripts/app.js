@@ -17,7 +17,7 @@ const mobileStyling = document.querySelector("#mobile-styling");
 
 //Event Listeners
 //Loads tasks from local storage
-document.addEventListener("DOMContentLoaded", function () {
+function LoadContent() {
 	let storedTasks;
 	if (localStorage.getItem("storedTasks") === null) {
 		storedTasks = [];
@@ -48,10 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		newTask.innerText = task;
 		completedTaskList.appendChild(newTask);
 	});
+}
+document.addEventListener("DOMContentLoaded", function () {
+	LoadContent();
 });
 
 //Adds a task to the task list and stores it in local storage
-addTaskButton.addEventListener("click", function (event) {
+function AddTask() {
 	event.preventDefault();
 
 	if (taskInput.value === "") {
@@ -77,10 +80,13 @@ addTaskButton.addEventListener("click", function (event) {
 		localStorage.setItem("storedTasks", JSON.stringify(storedTasks));
 		taskInput.value = "";
 	}
+}
+addTaskButton.addEventListener("click", function (event) {
+	AddTask();
 });
 
 //Marks a task as completed and moves it to the completed task list
-taskList.addEventListener("click", function (event) {
+function CompleteTask() {
 	if (event.target.classList.contains("task-item")) {
 		event.target.classList.toggle("completed");
 		completedTaskList.appendChild(event.target);
@@ -109,10 +115,13 @@ taskList.addEventListener("click", function (event) {
 		storedTasks.splice(storedTasks.indexOf(event.target.innerText), 1);
 		localStorage.setItem("storedTasks", JSON.stringify(storedTasks));
 	}
+}
+taskList.addEventListener("click", function (event) {
+	CompleteTask();
 });
 
 //Deletes a task from the task list
-taskList.addEventListener("contextmenu", function (event) {
+function DeleteTask() {
 	event.preventDefault();
 
 	if (event.target.classList.contains("task-item")) {
@@ -129,10 +138,13 @@ taskList.addEventListener("contextmenu", function (event) {
 
 	storedTasks.splice(storedTasks.indexOf(event.target.innerText), 1);
 	localStorage.setItem("storedTasks", JSON.stringify(storedTasks));
+}
+taskList.addEventListener("contextmenu", function (event) {
+	DeleteTask();
 });
 
 //Marks a task as incomplete and moves it back to the task list
-completedTaskList.addEventListener("click", function (event) {
+function ActivateTask() {
 	if (event.target.classList.contains("task-item")) {
 		event.target.classList.toggle("completed");
 		taskList.appendChild(event.target);
@@ -164,10 +176,13 @@ completedTaskList.addEventListener("click", function (event) {
 			JSON.stringify(storedCompletedTasks)
 		);
 	}
+}
+completedTaskList.addEventListener("click", function (event) {
+	ActivateTask();
 });
 
 //Deletes a task from the completed task list
-completedTaskList.addEventListener("contextmenu", function (event) {
+function DeleteOneCompletedTask() {
 	event.preventDefault();
 
 	if (event.target.classList.contains("task-item")) {
@@ -191,10 +206,13 @@ completedTaskList.addEventListener("contextmenu", function (event) {
 			JSON.stringify(storedCompletedTasks)
 		);
 	}
+}
+completedTaskList.addEventListener("contextmenu", function (event) {
+	DeleteOneCompletedTask();
 });
 
 //Deletes all completed tasks
-deleteCompletedTasksButton.addEventListener("click", function (event) {
+function DeleteCompletedTasks() {
 	const confirmation = confirm(
 		"Are you sure you want to delete all completed tasks?"
 	);
@@ -207,10 +225,13 @@ deleteCompletedTasksButton.addEventListener("click", function (event) {
 	}
 
 	localStorage.removeItem("storedCompletedTasks");
+}
+deleteCompletedTasksButton.addEventListener("click", function (event) {
+	DeleteCompletedTasks();
 });
 
 //Deletes all tasks
-deleteAllTasksButton.addEventListener("click", function (event) {
+function DeleteAllTasks() {
 	const confirmation = confirm("Are you sure you want to delete all tasks?");
 
 	if (confirmation === true) {
@@ -221,10 +242,13 @@ deleteAllTasksButton.addEventListener("click", function (event) {
 	}
 
 	localStorage.clear();
+}
+deleteAllTasksButton.addEventListener("click", function (event) {
+	DeleteAllTasks();
 });
 
 //Changes the theme of the app
-changeThemeButton.addEventListener("click", function (event) {
+function ChangeTheme() {
 	if (mainStyling.getAttribute("href") === "./assets/styles/main.css") {
 		mainStyling.setAttribute("href", "./assets/styles/main-dark.css");
 
@@ -242,4 +266,7 @@ changeThemeButton.addEventListener("click", function (event) {
 			mobileStyling.setAttribute("href", "./assets/styles/mobile.css");
 		}
 	}
+}
+changeThemeButton.addEventListener("click", function (event) {
+	ChangeTheme();
 });
