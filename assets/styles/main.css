@@ -83,6 +83,7 @@ main#main div#input-container input#task-input-form {
 	border-bottom: 1px solid black;
 	text-align: end;
 	color: black;
+	background-color: transparent;
 }
 
 main#main div#input-container input#task-input-form:focus {
@@ -143,6 +144,7 @@ main#main div#search-box input {
 	border-bottom: 1px solid black;
 	text-align: center;
 	color: black;
+	background-color: transparent;
 }
 
 main#main div#search-box input:focus {
