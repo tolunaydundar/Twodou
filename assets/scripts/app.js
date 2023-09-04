@@ -54,7 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	LoadContent();
 });
 
-searchBox.addEventListener("keyup", function (event) {
+//Filters tasks based on the search box input
+function filterTasks() {
 	const searchBoxValue = event.target.value.toLowerCase();
 	const taskItems = document.querySelectorAll(".task-item");
 
@@ -67,6 +68,10 @@ searchBox.addEventListener("keyup", function (event) {
 			taskItem.setAttribute("style", "display: none");
 		}
 	});
+}
+
+searchBox.addEventListener("keyup", function (event) {
+	filterTasks();
 });
 
 //Adds a task to the task list and stores it in local storage
