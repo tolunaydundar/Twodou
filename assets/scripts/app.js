@@ -4,6 +4,7 @@ const addTaskButton = document.querySelector("#add-task-button");
 const errorMessageContainer = document.querySelector(
 	"#error-message-container"
 );
+const searchBox = document.querySelector("#search-box");
 const taskListContainer = document.querySelector("#task-list-container");
 const taskList = document.querySelector("#task-list");
 const completedTaskList = document.querySelector("#completed-task-list");
@@ -51,6 +52,21 @@ function LoadContent() {
 }
 document.addEventListener("DOMContentLoaded", function () {
 	LoadContent();
+});
+
+searchBox.addEventListener("keyup", function (event) {
+	const searchBoxValue = event.target.value.toLowerCase();
+	const taskItems = document.querySelectorAll(".task-item");
+
+	taskItems.forEach(function (taskItem) {
+		const taskItemText = taskItem.innerText.toLowerCase();
+
+		if (taskItemText.indexOf(searchBoxValue) != -1) {
+			taskItem.setAttribute("style", "display: flex");
+		} else {
+			taskItem.setAttribute("style", "display: none");
+		}
+	});
 });
 
 //Adds a task to the task list and stores it in local storage
