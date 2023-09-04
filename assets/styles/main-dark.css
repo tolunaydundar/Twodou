@@ -130,6 +130,29 @@ main#main div#input-container div#error-message-container {
 	display: none;
 }
 
+main#main div#search-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+main#main div#search-box input {
+	width: 30vw;
+	height: 5vh;
+	font-size: 1.5rem;
+	margin: 1rem;
+	padding: 0.5rem;
+	border: none;
+	border-bottom: 1px solid white;
+	text-align: center;
+	color: black;
+	background-color: transparent;
+}
+
+main#main div#search-box input:focus {
+	outline: none;
+}
+
 main#main div#task-container {
 	margin: 1rem;
 	display: flex;
